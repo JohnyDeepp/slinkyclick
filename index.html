@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slinky Click Effect - Make Your Click More Elegant</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,100' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <style>
+    	body,html {
+background: #ECBD43;
+    		padding:0px 0px 50px 0px;
+    		margin:0px;
+    		font-family: 'Raleway' sans-serif;
+    		-webkit-tap-highlight-color: rgba(0,0,0,0);
+    	}
+
+    	h1 {
+background: #3CBAF3;
+padding: 30px;
+color: white;
+margin: 0px;
+font-weight: 300;
+font-size: 2em;
+text-align: center;
+font-family: sans-serif;
+    	}
+    	h2 {
+background: #E75C83;
+padding: 30px;
+color: white;
+margin: 0px;
+font-weight: 300;
+font-size: 1.3em;
+text-align: center;
+font-family: sans-serif;
+    	}
+		    	h3 {
+background: #62DA88;
+padding: 30px;
+color: white;
+margin: 0px;
+font-weight: 300;
+font-size: 1.3em;
+text-align: center;
+font-family: sans-serif;
+    	}
+.dogeblock {
+width:100%;
+position:relative;
+height:553px;
+}
+.doge {
+margin: auto;
+position: absolute;
+left: 0;
+right: 0;
+top: 44px;
+}
+.textdoge {
+position: absolute;
+text-align: center;
+bottom: 0px;
+left: 0;
+right: 0;
+font-size: 2.5em;
+color: white;
+font-family: arial;
+}
+
+        input:focus,
+		select:focus,
+		textarea:focus,
+		button:focus,
+		a:active {
+        	-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			outline: none;
+        }
+    	p {
+    	
+    	}
+@keyframes appear{
+	0%{
+		opacity:.8;
+		transform:scale(.5, .5);
+	}
+	70%{
+		opacity:.3;
+		transform:scale(1, 1);
+	}
+	100%{
+		opacity:0;
+		transform:scale(.5, .5);
+	}
+}
+@-webkit-keyframes appear{
+	0%{
+		opacity:.8;
+		-webkit-transform:scale(.5, .5);
+	}
+	70%{
+		opacity:.3;
+		-webkit-transform:scale(1, 1);
+	}
+	100%{
+		opacity:0;
+		-webkit-transform:scale(.5, .5);
+	}
+}
+.cursor{
+	position:fixed;
+	width:40px;
+	height:40px;
+	margin:-20px 0 0 -20px;
+	border-radius:100%;
+	background: rgb(90, 209, 247);
+	animation:appear .2s;
+	-webkit-animation:appear .2s;
+}
+.code {
+width: 500px;
+background: white;
+border: 1px solid rgba(204, 173, 48, 1);
+margin: auto;
+padding: 22px;
+color: black;
+font-size: 15px;
+font-family: arial;
+margin-top: 44px;
+}
+.css {
+font-size: 24px;
+position: absolute;
+margin: auto;
+left: 0;
+right: 0;
+margin-top: 10px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+.bottom {
+width: 100%;
+text-align: center;
+background: rgb(43, 43, 43);
+position: fixed;
+bottom: 0;
+padding: 12px;
+color: white;
+}
+    </style>
+</head>
+<body> 
+<div class="header">
+<h1>Slinky Click Effect v.0.1 - Stable</h1>
+<h2>Simple way to make your click more Sexy!</h2>
+<h3>Just click on any area of the screen!</h3>
+</div>
+<div class="dogeblock">
+<img class="doge" alt="Doge" src="dogehead.png">
+<div class="textdoge">Yaaah! So Doge Click!</div>
+</div>
+<div class="code">
+$(document).on('click', function (e) {<br>
+	$(' Put here ur class div ')<br>
+		.css({<br>
+			top: e.clientY,<br>
+			left: e.clientX<br>
+		})<br>
+		.appendTo($(document.body))<br>
+		.on('animationend webkitAnimationEnd', function (e) {<br>
+			$(this).remove();<br>
+		});
+});
+</div>
+<div class="css">CSS</div>
+<div class="code">
+@keyframes appear{<br>
+	0%{<br>
+		opacity:.8;<br>
+		transform:scale(.5, .5);<br>
+	}<br>
+	70%{<br>
+		opacity:.3;<br>
+		transform:scale(1, 1);<br>
+	}<br>
+	100%{<br>
+		opacity:0;<br>
+		transform:scale(.5, .5);<br>
+	}<br>
+}<br>
+@-webkit-keyframes appear{<br>
+	0%{<br>
+		opacity:.8;<br>
+		-webkit-transform:scale(.5, .5);<br>
+	}<br>
+	70%{<br>
+		opacity:.3;<br>
+		-webkit-transform:scale(1, 1);<br>
+	}<br>
+	100%{<br>
+		opacity:0;<br>
+		-webkit-transform:scale(.5, .5);<br>
+	}<br>
+}<br>
+.cursor{<br>
+	position:fixed;<br>
+	width:40px;<br>
+	height:40px;<br>
+	margin:-20px 0 0 -20px;<br>
+	border-radius:100%;<br>
+	background: rgb(90, 209, 247);<br>
+	animation:appear .2s;<br>
+	-webkit-animation:appear .2s;<br>
+}<br>
+</div>
+<a class="bottom" href="https://github.com/JohnyDeepp">GitHub</a>
+<script type="text/javascript" src="slinkyclick.js"></script>
+</body>
+</html>
